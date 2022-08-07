@@ -13,6 +13,8 @@
 		CAE0D512289F4DF6003BC9C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE0D500289F4DF5003BC9C4 /* ContentView.swift */; };
 		CAE0D513289F4DF6003BC9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE0D501289F4DF6003BC9C4 /* Assets.xcassets */; };
 		CAE0D514289F4DF6003BC9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE0D501289F4DF6003BC9C4 /* Assets.xcassets */; };
+		CAE0D51F289F4ECC003BC9C4 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = CAE0D51E289F4ECC003BC9C4 /* BottomSheet */; };
+		CAE0D523289F4F32003BC9C4 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = CAE0D522289F4F32003BC9C4 /* BottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		CAE0D506289F4DF6003BC9C4 /* BottomSheetTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheetTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE0D50C289F4DF6003BC9C4 /* BottomSheetTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheetTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE0D50E289F4DF6003BC9C4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CAE0D520289F4EE5003BC9C4 /* BottomSheetTests (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BottomSheetTests (iOS).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE0D51F289F4ECC003BC9C4 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE0D523289F4F32003BC9C4 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,9 +50,11 @@
 		CAE0D4F9289F4DF5003BC9C4 = {
 			isa = PBXGroup;
 			children = (
+				CAE0D520289F4EE5003BC9C4 /* BottomSheetTests (iOS).entitlements */,
 				CAE0D4FE289F4DF5003BC9C4 /* Shared */,
 				CAE0D50D289F4DF6003BC9C4 /* macOS */,
 				CAE0D507289F4DF6003BC9C4 /* Products */,
+				CAE0D521289F4F32003BC9C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +85,13 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		CAE0D521289F4F32003BC9C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +108,9 @@
 			dependencies = (
 			);
 			name = "BottomSheetTests (iOS)";
+			packageProductDependencies = (
+				CAE0D51E289F4ECC003BC9C4 /* BottomSheet */,
+			);
 			productName = "BottomSheetTests (iOS)";
 			productReference = CAE0D506289F4DF6003BC9C4 /* BottomSheetTests.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 			dependencies = (
 			);
 			name = "BottomSheetTests (macOS)";
+			packageProductDependencies = (
+				CAE0D522289F4F32003BC9C4 /* BottomSheet */,
+			);
 			productName = "BottomSheetTests (macOS)";
 			productReference = CAE0D50C289F4DF6003BC9C4 /* BottomSheetTests.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +162,9 @@
 				Base,
 			);
 			mainGroup = CAE0D4F9289F4DF5003BC9C4;
+			packageReferences = (
+				CAE0D51D289F4ECC003BC9C4 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
 			productRefGroup = CAE0D507289F4DF6003BC9C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BottomSheetTests (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N6245FWCVQ;
@@ -319,7 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +352,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucaszischka.BottomSheetTests;
 				PRODUCT_NAME = BottomSheetTests;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -339,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BottomSheetTests (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N6245FWCVQ;
@@ -349,7 +376,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,9 +385,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucaszischka.BottomSheetTests;
 				PRODUCT_NAME = BottomSheetTests;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -383,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucaszischka.BottomSheetTests;
 				PRODUCT_NAME = BottomSheetTests;
@@ -411,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucaszischka.BottomSheetTests;
 				PRODUCT_NAME = BottomSheetTests;
@@ -452,6 +481,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAE0D51D289F4ECC003BC9C4 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LucasMucGH/BottomSheet";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAE0D51E289F4ECC003BC9C4 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAE0D51D289F4ECC003BC9C4 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+		CAE0D522289F4F32003BC9C4 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAE0D51D289F4ECC003BC9C4 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CAE0D4FA289F4DF5003BC9C4 /* Project object */;
 }
