@@ -12,12 +12,14 @@ struct ContentView: View {
     
     @State private var bottomSheetPosition: BottomSheetPosition = .relative(0.5)
     
+    @State private var isAccountingForKeyboardHeightEnabled: Bool = false
     @State private var isAppleScrollBehaviourEnabled: Bool = false
     @State private var isBackgroundBlurEnabled: Bool = false
     @State private var isCloseButtonEnabled: Bool = false
     @State private var isContentDragEnabled: Bool = false
     @State private var isDragIndicatorEnabled: Bool = false
     @State private var isFlickThroughEnabled: Bool = false
+    @State private var isFloatingIPadSheetEnabled: Bool = true
     @State private var isResizableEnabled: Bool = true
     @State private var isSwipeToDismissEnabled: Bool = false
     @State private var isTapToDismissEnabled: Bool = false
@@ -98,6 +100,7 @@ struct ContentView: View {
                     .frame(height: self.rectangle2Height)
             }
         })
+        .enableAccountingForKeyboardHeight(self.isAccountingForKeyboardHeightEnabled)
         .enableAppleScrollBehavior(self.isAppleScrollBehaviourEnabled)
         .enableBackgroundBlur(self.isBackgroundBlurEnabled)
         // .backgroundBlurMaterial(.systemDark)
@@ -120,10 +123,12 @@ struct ContentView: View {
         //     //
         // })
         .enableFlickThrough(self.isFlickThroughEnabled)
+        .enableFloatingIPadSheet(self.isFloatingIPadSheetEnabled)
         .onDismiss {
             print("dismissed")
         }
         .isResizable(self.isResizableEnabled)
+        // .sheetWidth(.relative(1))
         .enableSwipeToDismiss(self.isSwipeToDismissEnabled)
         .enableTapToDismiss(self.isTapToDismissEnabled)
     }
@@ -195,6 +200,13 @@ struct ContentView: View {
     var modifierToggleView1: some View {
         VStack(alignment: .center, spacing: 10) {
             Button(action: {
+                self.isAccountingForKeyboardHeightEnabled.toggle()
+            }, label: {
+                Text("AccountingForKeyboardHeight")
+            })
+                .foregroundColor(self.isAccountingForKeyboardHeightEnabled ? .green : .red)
+            
+            Button(action: {
                 self.isAppleScrollBehaviourEnabled.toggle()
             }, label: {
                 Text("AppleScrollBehaviour")
@@ -240,6 +252,13 @@ struct ContentView: View {
     
     var modifierToggleView2: some View {
         VStack(alignment: .center, spacing: 10) {
+            Button(action: {
+                self.isFloatingIPadSheetEnabled.toggle()
+            }, label: {
+                Text("FloatingIPadSheet")
+            })
+                .foregroundColor(self.isFloatingIPadSheetEnabled ? .green : .red)
+            
             Button(action: {
                 self.isResizableEnabled.toggle()
             }, label: {
