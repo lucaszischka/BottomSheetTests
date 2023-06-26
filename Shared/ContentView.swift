@@ -9,9 +9,9 @@ import SwiftUI
 import BottomSheet
 
 struct ContentView: View {
-    
+
     @State private var bottomSheetPosition: BottomSheetPosition = .relative(0.5)
-    
+
     @State private var isAccountingForKeyboardHeightEnabled: Bool = false
     @State private var isAppleScrollBehaviourEnabled: Bool = false
     @State private var isBackgroundBlurEnabled: Bool = false
@@ -23,12 +23,12 @@ struct ContentView: View {
     @State private var isResizableEnabled: Bool = true
     @State private var isSwipeToDismissEnabled: Bool = false
     @State private var isTapToDismissEnabled: Bool = false
-    
+
     @State private var isHeaderEnabled: Bool = true
-    
+
     @State private var rectangle1Height: CGFloat = 100
     @State private var rectangle2Height: CGFloat = 100
-    
+
     var positionAsString: String {
         switch self.bottomSheetPosition {
         case .dynamic:
@@ -53,13 +53,13 @@ struct ContentView: View {
             return "hidden"
         }
     }
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             self.positionSwitchingView
-            
+
             self.modifierToggleView1
-            
+
             self.modifierToggleView2
         }
         .bottomSheet(bottomSheetPosition: self.$bottomSheetPosition, switchablePositions: [
@@ -67,13 +67,13 @@ struct ContentView: View {
             // .dynamicBottom,
             // .dynamic,
             // .dynamicTop,
-            
+
             // Absolute
             // .absoluteBottom(200),
             // .absolute(400),
             // .absolute(600),
             // .absoluteTop(800),
-            
+
             // Relative
             .relativeBottom(0.2),
             .relative(0.5),
@@ -93,7 +93,7 @@ struct ContentView: View {
                     .fill(.red)
                     .frame(width: 20, height: self.rectangle1Height)
             }
-            
+
             if self.rectangle2Height >= 0 {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(.blue)
@@ -132,7 +132,7 @@ struct ContentView: View {
         .enableSwipeToDismiss(self.isSwipeToDismissEnabled)
         .enableTapToDismiss(self.isTapToDismissEnabled)
     }
-    
+
     var positionSwitchingView: some View {
         VStack(alignment: .center, spacing: 10) {
             Button(action: {
@@ -140,55 +140,55 @@ struct ContentView: View {
             }, label: {
                 Text(".hidden")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .dynamicBottom
             }, label: {
                 Text(".dynamicBottom")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .dynamic
             }, label: {
                 Text(".dynamic")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .dynamicTop
             }, label: {
                 Text(".dynamicTop")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .relativeBottom(0.2)
             }, label: {
                 Text(".relativeBottom(0.2)")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .relative(0.5)
             }, label: {
                 Text(".relative(0.5)")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .relativeTop(0.8)
             }, label: {
                 Text(".relativeTop(0.8)")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .absoluteBottom(200)
             }, label: {
                 Text(".absoluteBottom(200)")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .absolute(400)
             }, label: {
                 Text(".absolute(400)")
             })
-            
+
             Button(action: {
                 self.bottomSheetPosition = .absoluteTop(800)
             }, label: {
@@ -196,7 +196,7 @@ struct ContentView: View {
             })
         }
     }
-    
+
     var modifierToggleView1: some View {
         VStack(alignment: .center, spacing: 10) {
             Button(action: {
@@ -205,42 +205,42 @@ struct ContentView: View {
                 Text("AccountingForKeyboardHeight")
             })
                 .foregroundColor(self.isAccountingForKeyboardHeightEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isAppleScrollBehaviourEnabled.toggle()
             }, label: {
                 Text("AppleScrollBehaviour")
             })
                 .foregroundColor(self.isAppleScrollBehaviourEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isBackgroundBlurEnabled.toggle()
             }, label: {
                 Text("BackgroundBlur")
             })
                 .foregroundColor(self.isBackgroundBlurEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isCloseButtonEnabled.toggle()
             }, label: {
                 Text("CloseButton")
             })
                 .foregroundColor(self.isCloseButtonEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isContentDragEnabled.toggle()
             }, label: {
                 Text("ContentDrag")
             })
                 .foregroundColor(self.isContentDragEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isDragIndicatorEnabled.toggle()
             }, label: {
                 Text("DragIndicator")
             })
                 .foregroundColor(self.isDragIndicatorEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isFlickThroughEnabled.toggle()
             }, label: {
@@ -249,7 +249,7 @@ struct ContentView: View {
                 .foregroundColor(self.isFlickThroughEnabled ? .green : .red)
         }
     }
-    
+
     var modifierToggleView2: some View {
         VStack(alignment: .center, spacing: 10) {
             Button(action: {
@@ -258,40 +258,40 @@ struct ContentView: View {
                 Text("FloatingIPadSheet")
             })
                 .foregroundColor(self.isFloatingIPadSheetEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isResizableEnabled.toggle()
             }, label: {
                 Text("Resizable")
             })
                 .foregroundColor(self.isResizableEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isSwipeToDismissEnabled.toggle()
             }, label: {
                 Text("SwipeToDismiss")
             })
                 .foregroundColor(self.isSwipeToDismissEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isTapToDismissEnabled.toggle()
             }, label: {
                 Text("TapToDismiss")
             })
                 .foregroundColor(self.isTapToDismissEnabled ? .green : .red)
-            
+
             Button(action: {
                 self.isHeaderEnabled.toggle()
             }, label: {
                 Text("Header")
             })
                 .foregroundColor(self.isHeaderEnabled ? .green : .red)
-            
+
             HStack(alignment: .center, spacing: 10) {
                 Text("Red rectangle")
                 Slider(value: self.$rectangle1Height, in: -10...1000, step: 10)
             }
-            
+
             HStack(alignment: .center, spacing: 10) {
                 Text("Blue rectangle")
                 Slider(value: self.$rectangle2Height, in: -10...1000, step: 10)
